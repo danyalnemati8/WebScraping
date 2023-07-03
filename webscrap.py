@@ -2,9 +2,13 @@ from bs4 import BeautifulSoup
 import requests
 import re
 count = 1
-n = 0
+n = 1
 while count <= 4:
-    url = "https://www.newegg.com/p/pl?N=100007709%204131%20601357247&d=3080&page={count}&isdeptsrh=1"
+    url = f"https://www.newegg.com/p/pl?N=100007709%204131%20601357247&d=3080&page={count}&isdeptsrh=1"
+    
+    print("count = ", end="")
+    print(count)
+    print(url)
 
     result = requests.get(url).text
     doc = BeautifulSoup(result, "html.parser")
