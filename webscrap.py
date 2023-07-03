@@ -1,6 +1,18 @@
 from bs4 import BeautifulSoup
 import requests
 import re
+import gspread
+from oauth2client.service_account import ServiceAccountCredentials
+
+# Define the scope and credentials
+scope = ['https://spreadsheets.google.com/feeds', 'https://www.googleapis.com/auth/drive']
+credentials = ServiceAccountCredentials.from_json_keyfile_name('scraper-project-391720-5521d58f18ef.json', scope)
+
+# Authorize the credentials
+client = gspread.authorize(credentials)
+
+sheet = client.open_by_url('https://docs.google.com/spreadsheets/d/1Bzedq9WqMuvgaV9VdpGXVJ4kXEjC5iVpslgnMFNYMkk/edit#gid=0').sheet1
+
 
 count = 1
 n = 1
@@ -39,3 +51,7 @@ while count <= 3:
 # Print the final lists
 print("Prices:", prices_list)
 print("Result Numbers:", result_numbers_list)
+
+
+for row_index, row in enumerate(result_numbers_list, start=1):
+    sheet.update(f'A{row_index}', row)
