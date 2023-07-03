@@ -3,7 +3,7 @@ import requests
 import re
 count = 1
 n = 1
-while count < 4:
+while count <= 3:
     url = f"https://www.newegg.com/p/pl?N=100007709%204131%20601357247%204814&d=3080&PageSize=36&isdeptsrh=1&page={count}"
     
     
