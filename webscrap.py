@@ -13,7 +13,6 @@ client = gspread.authorize(credentials)
 
 sheet = client.open_by_url('https://docs.google.com/spreadsheets/d/1Bzedq9WqMuvgaV9VdpGXVJ4kXEjC5iVpslgnMFNYMkk/edit#gid=0').sheet1
 
-
 count = 1
 n = 1
 
@@ -52,6 +51,10 @@ while count <= 3:
 print("Prices:", prices_list)
 print("Result Numbers:", result_numbers_list)
 
+# Prepare data for updating the sheet
+data = []
+for i in range(len(result_numbers_list)):
+    data.append([result_numbers_list[i], prices_list[i]])
 
-for row_index, row in enumerate(result_numbers_list, start=1):
-    sheet.update(f'A{row_index}', row)
+# Update the sheet
+sheet.update('A1:B', data)
