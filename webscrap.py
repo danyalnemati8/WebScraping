@@ -50,11 +50,19 @@ while count <= 3:
 # Print the final lists
 print("Prices:", prices_list)
 print("Result Numbers:", result_numbers_list)
+# ...
 
 # Prepare data for updating the sheet
 data = []
 for i in range(len(result_numbers_list)):
-    data.append([result_numbers_list[i], prices_list[i]])
+    if i < len(prices_list):
+        data.append([result_numbers_list[i], prices_list[i]])
+    else:
+        data.append([result_numbers_list[i], "Price information not found"])
+
+# Remove the last entry if it is blank
+if data[-1][1] == '':
+    data.pop()
 
 # Update the sheet
 sheet.update('A1:B', data)
