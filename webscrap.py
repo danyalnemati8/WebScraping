@@ -10,6 +10,7 @@ doc = BeautifulSoup(result, "html.parser")
 prices = doc.find_all(["li", "strong"], class_="price-current")
 
 for price in prices:
-    print(price)
+    print(price.find("strong"))
+    print(price.find("sup"))
     print("\n")
     
