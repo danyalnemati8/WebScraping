@@ -40,6 +40,9 @@
  body{
    min-height: 100vh;
    background: url('rocket.jpg') no-repeat;
+   background-size: cover;
+   background-repeat: no-repeat;
+   background-attachment: fixed;
  }
  .header {
    position: fixed;
