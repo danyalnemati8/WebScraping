@@ -18,8 +18,7 @@ while count <= 3:
     count = count + 1
     
     for price in prices:
-        print("$" + price.find("strong").text, end="")
-        print(price.find("sup").text)
+        print("$" + str(price.find("strong")) + str(price.find("sup")))
         print("result number = ", end="")
         print(n)
         n = n + 1
