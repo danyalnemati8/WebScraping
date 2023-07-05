@@ -40,6 +40,8 @@ for price in prices:
         print("$" + price_value)
     else:
         print("Price information not found")
+        prices_list.append("not found")
+        result_numbers_list.append(n)
 
   
     print("result number =", n)
