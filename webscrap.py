@@ -3,6 +3,7 @@ import requests
 import re
 import gspread
 from oauth2client.service_account import ServiceAccountCredentials
+from datetime import date
 
 # Define the scope and credentials
 scope = ['https://spreadsheets.google.com/feeds', 'https://www.googleapis.com/auth/drive']
@@ -54,7 +55,7 @@ print("Result Numbers:", result_numbers_list)
 data = []
 for i in range(len(result_numbers_list)):
     if i < len(prices_list):
-        data.append([result_numbers_list[i], prices_list[i]])
+        data.append([result_numbers_list[i], prices_list[i], "3080 GPU's", str(date.today())])
     else:
         data.append([result_numbers_list[i], "Price information not found"])
 
@@ -63,4 +64,4 @@ if data[-1][1] == '':
     data.pop()
 
 # Update the sheet
-sheet.update('A1:B', data)
+sheet.update('A1:D', data)
