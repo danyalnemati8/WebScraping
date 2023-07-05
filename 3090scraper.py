@@ -57,7 +57,7 @@ print("Result Numbers:", result_numbers_list)
 data = []
 for i in range(len(result_numbers_list)):
     if i < len(prices_list):
-        data.append([result_numbers_list[i], prices_list[i], "3070 GPU's", str(date.today())])
+        data.append([result_numbers_list[i], prices_list[i], "3090 GPU's", str(date.today())])
     else:
         data.append([result_numbers_list[i], "Price information not found"])
 
@@ -66,4 +66,4 @@ if data[-1][1] == '':
     data.pop()
 
 # Update the sheet
-sheet.update('E1:H', data)
+sheet.update('M1:P', data)
