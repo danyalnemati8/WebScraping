@@ -57,7 +57,7 @@ print("Result Numbers:", result_numbers_list)
 data = []
 for i in range(len(result_numbers_list)):
     if i < len(prices_list):
-        data.append([result_numbers_list[i], prices_list[i], "3060 GPU's", str(date.today())])
+         data.append([result_numbers_list[i], prices_list[i], str(date.today()), "3060 GPU's"])
     else:
         data.append([result_numbers_list[i], "Price information not found"])
 
