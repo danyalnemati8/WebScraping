@@ -86,3 +86,10 @@
 .navbar a:hover::before {
    width: 100%;
 }
+#chart_div {
+   width: 900px;
+   height: 500px;
+   margin: 0 auto;
+   background-color: white;
+ }
+ 
