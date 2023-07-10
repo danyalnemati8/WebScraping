@@ -55,7 +55,10 @@ for price in prices:
 data = []
 for i in range(len(result_numbers_list)):
     if i < len(prices_list):
-        data.append([result_numbers_list[i], prices_list[i], str(date.today()), "3090 GPU's"])
+        month = str(datetime.now().month)
+        year = str(datetime.now().year)
+        day = str(datetime.now().day)
+        data.append([result_numbers_list[i], str(month + "/" + day + "/" + year), prices_list[i], "3090 GPU's"])
     else:
         data.append([result_numbers_list[i], "Price information not found"])
 
