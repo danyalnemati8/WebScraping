@@ -68,4 +68,4 @@ if data[-1][1] == '':
 last_row = len(sheet.get_all_values())
 
 # Update the sheet starting from the last row
-sheet.update(f'I{last_row+2}:L', data)
+sheet.update(f'I{last_row+1}:L', data)
