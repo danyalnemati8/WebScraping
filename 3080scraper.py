@@ -2,7 +2,7 @@ from bs4 import BeautifulSoup
 import requests
 import gspread
 from oauth2client.service_account import ServiceAccountCredentials
-from datetime import date
+from datetime import datetime
 
 # Define the scope and credentials
 scope = ['https://spreadsheets.google.com/feeds', 'https://www.googleapis.com/auth/drive']
