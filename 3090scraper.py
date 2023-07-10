@@ -66,4 +66,4 @@ if data[-1][1] == '':
     data.pop()
 
 # Update the sheet
-sheet.update('M1:P', data)
+sheet.update('M2:P', data)
