@@ -4,19 +4,6 @@ import re
 import gspread
 from oauth2client.service_account import ServiceAccountCredentials
 from datetime import date
-import json
-from flask import Flask, render_template
-
-app = Flask(__name__)
-
-@app.route('/')
-def index():
-    return render_template('index.html', data_json=data_json)
-
-if __name__ == '__main__':
-    app.run()
-
-
 
 # Define the scope and credentials
 scope = ['https://spreadsheets.google.com/feeds', 'https://www.googleapis.com/auth/drive']
@@ -74,8 +61,6 @@ for i in range(len(result_numbers_list)):
     else:
         data.append([result_numbers_list[i], "Price information not found"])
 
-# Convert data to JSON string
-data_json = json.dumps(data)
 
 # Remove the last entry if it is blank
 if data[-1][1] == '':
