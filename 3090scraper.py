@@ -65,5 +65,8 @@ for i in range(len(result_numbers_list)):
 if data[-1][1] == '':
     data.pop()
 
-# Update the sheet
-sheet.update('M2:P', data)
+# Get the last row number in the sheet
+last_row = len(sheet.get_all_values())
+
+# Update the sheet starting from the last row
+sheet.update(f'Q{last_row+2}:T', data)

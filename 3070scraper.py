@@ -12,8 +12,7 @@ credentials = ServiceAccountCredentials.from_json_keyfile_name('scraper-project-
 # Authorize the credentials
 client = gspread.authorize(credentials)
 
-sheet = client.open_by_url('https://docs.google.com/spreadsheets/d/1Bzedq9WqMuvgaV9VdpGXVJ4kXEjC5iVpslgnMFNYMkk/edit#gid=0').sheet1
-
+sheet = client.open_by_url('https://docs.google.com/spreadsheets/d/1Bzedq9WqMuvgaV9VdpGXVJ4kXEjC5iVpslgnMFNYMkk/edit#gid=0').get_worksheet(0)
 
 n = 1
 
@@ -65,5 +64,8 @@ for i in range(len(result_numbers_list)):
 if data[-1][1] == '':
     data.pop()
 
-# Update the sheet
-sheet.update('E2:H', data)
+# Get the last row number in the sheet
+last_row = len(sheet.get_all_values())
+
+# Update the sheet starting from the last row
+sheet.update(f'E{last_row+2}:H', data)
