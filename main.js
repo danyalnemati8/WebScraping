@@ -11,22 +11,55 @@ fetch(FULL_URL)
     // Use DOM manipulation to extract data from the parsed HTML
     const tableRows = tempElement.querySelectorAll('table tr');
 
-   // Process the extracted data as needed
-   tableRows.forEach(row => {
-    const cells = row.querySelectorAll('td');
-    const rowData = Array.from(cells)
-      .map(cell => cell.textContent);
+    // Process the extracted data as needed
+    const labels = [];
+    const data = [];
+    tableRows.forEach(row => {
+      const cells = row.querySelectorAll('td');
+      const cellDataF = cells[5] ? cells[5].textContent : ''; // Data from column F
+      const cellDataG = cells[6] ? cells[6].textContent : ''; // Data from column G
 
-    // Process the rowData until an empty cell is encountered
-    
- // Plot 3070 data for now 
-      const lastIndex = 7;
-      const filteredData = rowData.slice(5, lastIndex).filter(cellData => cellData.trim() !== '');
+      // Filter out empty cells
+      if (cellDataF.trim() !== '' && cellDataG.trim() !== '') {
+        labels.push(cellDataF);
+        data.push(parseFloat(cellDataG));
+      }
+    });
 
-      console.log(filteredData);
+    // Create a new Chart.js chart
+    const ctx = document.getElementById('myChart').getContext('2d');
+    new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels: labels,
+        datasets: [{
+          label: 'Data',
+          data: data,
+          backgroundColor: 'rgba(0, 123, 255, 0.5)'
+        }]
+      },
+      options: {
+        responsive: true,
+        scales: {
+          x: {
+            title: {
+              display: true,
+              text: 'Column F Data'
+            }
+          },
+          y: {
+            title: {
+              display: true,
+              text: 'Column G Data'
+            },
+            beginAtZero: true
+          }
+        }
+      }
     });
   })
   .catch(error => {
     console.error(error);
   });
+
 
