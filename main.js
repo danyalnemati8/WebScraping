@@ -19,14 +19,14 @@ fetch(FULL_URL)
 
     // Process the rowData until an empty cell is encountered
     
-    //plot 3070 data for now 
-    const lastIndex = 8
-    const finalRowData = lastIndex === -1 ? rowData : rowData.slice(4, lastIndex);
+ // Plot 3070 data for now 
+      const lastIndex = 8;
+      const filteredData = rowData.slice(4, lastIndex).filter(cellData => cellData.trim() !== '');
 
-    console.log(finalRowData);
+      console.log(filteredData);
+    });
+  })
+  .catch(error => {
+    console.error(error);
   });
-})
-.catch(error => {
-  console.error(error);
-});
 
