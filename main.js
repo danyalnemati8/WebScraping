@@ -1,4 +1,3 @@
-
 let FULL_URL = 'https://docs.google.com/spreadsheets/d/1Bzedq9WqMuvgaV9VdpGXVJ4kXEjC5iVpslgnMFNYMkk/edit#gid=0';
 
 fetch(FULL_URL)
@@ -14,7 +13,9 @@ fetch(FULL_URL)
     // Process the extracted data as needed
     const labels = [];
     const data = [];
-    tableRows.forEach(row => {
+    // Start iterating from index 1 to skip the first row
+    for (let i = 2; i < tableRows.length; i++) {
+      const row = tableRows[i];
       const cells = row.querySelectorAll('td');
       const cellDataF = cells[5] ? cells[5].textContent : ''; // Data from column F
       const cellDataG = cells[6] ? cells[6].textContent : ''; // Data from column G
@@ -24,7 +25,8 @@ fetch(FULL_URL)
         labels.push(cellDataF);
         data.push(parseFloat(cellDataG));
       }
-    });
+    }
+      
 
     // Create a new Chart.js chart
     const ctx = document.getElementById('myChart').getContext('2d');
@@ -44,13 +46,13 @@ fetch(FULL_URL)
           x: {
             title: {
               display: true,
-              text: 'Column F Data'
+              text: 'Dates'
             }
           },
           y: {
             title: {
               display: true,
-              text: 'Column G Data'
+              text: 'Prices'
             },
             beginAtZero: true
           }
@@ -61,5 +63,3 @@ fetch(FULL_URL)
   .catch(error => {
     console.error(error);
   });
-
-
