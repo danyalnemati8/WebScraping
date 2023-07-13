@@ -20,7 +20,11 @@ fetch(FULL_URL)
       }
     }
 
-    const margin = { top: 20, right: 20, bottom: 50, left: 50 };
+    const groupedData = groupDataByDate(data);
+    const meanData = calculateMeanData(groupedData);
+    const medianData = calculateMedianData(groupedData);
+
+    const margin = { top: 50, right: 20, bottom: 50, left: 50 };
     const width = 500 - margin.left - margin.right;
     const height = 400 - margin.top - margin.bottom;
 
@@ -63,44 +67,33 @@ fetch(FULL_URL)
       .attr('r', 5)
       .attr('fill', 'rgba(0, 123, 255, 0.5)');
 
-    const mean = d3.mean(data, d => d.y);
-    const median = d3.median(data, d => d.y);
+    const line = d3.line()
+      .x(d => xScale(d.x))
+      .y(d => yScale(d.y))
+      .curve(d3.curveMonotoneX);
 
-    svg.append('line')
+    svg.append('path')
+      .datum(meanData)
       .attr('class', 'mean-line')
-      .attr('x1', 0)
-      .attr('y1', yScale(mean))
-      .attr('x2', width)
-      .attr('y2', yScale(mean))
+      .attr('fill', 'none')
       .attr('stroke', 'rgba(255, 0, 0, 0.8)')
       .attr('stroke-width', 2)
-      .attr('stroke-dasharray', '4 4');
+      .attr('d', line);
 
-    svg.append('line')
+    svg.append('path')
+      .datum(medianData)
       .attr('class', 'median-line')
-      .attr('x1', 0)
-      .attr('y1', yScale(median))
-      .attr('x2', width)
-      .attr('y2', yScale(median))
+      .attr('fill', 'none')
       .attr('stroke', 'rgba(0, 255, 0, 0.8)')
       .attr('stroke-width', 2)
-      .attr('stroke-dasharray', '4 4');
+      .attr('d', line);
 
     svg.append('text')
-      .attr('class', 'mean-label')
-      .attr('x', width - 10)
-      .attr('y', yScale(mean) - 5)
-      .attr('text-anchor', 'end')
-      .attr('fill', 'rgba(255, 0, 0, 0.8)')
-      .text('Mean: ' + mean.toFixed(2));
-
-    svg.append('text')
-      .attr('class', 'median-label')
-      .attr('x', width - 10)
-      .attr('y', yScale(median) - 5)
-      .attr('text-anchor', 'end')
-      .attr('fill', 'rgba(0, 255, 0, 0.8)')
-      .text('Median: ' + median.toFixed(2));
+      .attr('x', width / 2)
+      .attr('y', -10)
+      .attr('text-anchor', 'middle')
+      .style('font-size', '16px')
+      .text('3070 Series');
 
     svg.append('text')
       .attr('x', width / 2)
@@ -114,7 +107,78 @@ fetch(FULL_URL)
       .attr('transform', 'rotate(-90)')
       .attr('text-anchor', 'middle')
       .text('Prices');
+
+      const legend = svg.append('g')
+      .attr('class', 'legend')
+      .attr('transform', `translate(${width - 120}, 10)`); // Updated position
+    
+    legend.append('text')
+      .attr('x', 10)
+      .attr('y', 0)
+      .style('font-size', '12px')
+      .text('Mean');
+    
+    legend.append('line')
+      .attr('x1', -5)
+      .attr('y1', -5)
+      .attr('x2', 15)
+      .attr('y2', -5)
+      .attr('stroke', 'rgba(255, 0, 0, 0.8)')
+      .attr('stroke-width', 2);
+    
+    legend.append('text')
+      .attr('x', 10)
+      .attr('y', 20)
+      .style('font-size', '12px')
+      .text('Median');
+    
+    legend.append('line')
+      .attr('x1', -5)
+      .attr('y1', 15)
+      .attr('x2', 15)
+      .attr('y2', 15)
+      .attr('stroke', 'rgba(0, 255, 0, 0.8)')
+      .attr('stroke-width', 2);
+    
   })
   .catch(error => {
     console.error(error);
   });
+
+function groupDataByDate(data) {
+  const groupedData = {};
+  data.forEach(datum => {
+    const date = datum.x.toDateString();
+    if (!groupedData[date]) {
+      groupedData[date] = [];
+    }
+    groupedData[date].push(datum.y);
+  });
+  return groupedData;
+}
+
+function calculateMeanData(groupedData) {
+  const meanData = [];
+  Object.keys(groupedData).forEach(date => {
+    const prices = groupedData[date];
+    const mean = prices.reduce((sum, price) => sum + price, 0) / prices.length;
+    meanData.push({ x: new Date(date), y: mean });
+  });
+  return meanData;
+}
+
+function calculateMedianData(groupedData) {
+  const medianData = [];
+  Object.keys(groupedData).forEach(date => {
+    const prices = groupedData[date];
+    const median = calculateMedian(prices);
+    medianData.push({ x: new Date(date), y: median });
+  });
+  return medianData;
+}
+
+function calculateMedian(arr) {
+  const sortedArr = arr.slice().sort((a, b) => a - b);
+  const mid = Math.floor(sortedArr.length / 2);
+  return sortedArr.length % 2 !== 0 ? sortedArr[mid] : (sortedArr[mid - 1] + sortedArr[mid]) / 2;
+}
