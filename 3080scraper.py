@@ -33,12 +33,14 @@ doc = BeautifulSoup(result, "html.parser")
 
 prices = doc.find_all("li", class_="price-current", limit=15)
 
+
+
 for price in prices:
     strong = price.find("strong")
     sup = price.find("sup")
 
     if strong and sup:
-        price_value = strong.text + sup.text
+        price_value = strong.text.replace(",", "") + sup.text.replace(",", "")
         prices_list.append(price_value)
         result_numbers_list.append(n)
         print("$" + price_value)
@@ -50,6 +52,8 @@ for price in prices:
     print("result number =", n)
     print("\n")
     n += 1
+
+
 
 # Prepare data for updating the sheet
 data = []
