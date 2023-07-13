@@ -1,4 +1,4 @@
-const FULL_URL = 'https://docs.google.com/spreadsheets/d/1Bzedq9WqMuvgaV9VdpGXVJ4kXEjC5iVpslgnMFNYMkk/edit#gid=0';
+FULL_URL = 'https://docs.google.com/spreadsheets/d/1Bzedq9WqMuvgaV9VdpGXVJ4kXEjC5iVpslgnMFNYMkk/edit#gid=0';
 
 fetch(FULL_URL)
   .then(response => response.text())
@@ -12,8 +12,8 @@ fetch(FULL_URL)
     for (let i = 2; i < tableRows.length; i++) {
       const row = tableRows[i];
       const cells = row.querySelectorAll('td');
-      const cellDataF = cells[5] ? cells[5].textContent : '';
-      const cellDataG = cells[6] ? parseFloat(cells[6].textContent) : NaN;
+      const cellDataF = cells[13] ? cells[13].textContent : '';
+      const cellDataG = cells[14] ? parseFloat(cells[14].textContent) : NaN;
 
       if (cellDataF.trim() !== '' && !isNaN(cellDataG)) {
         data.push({ x: new Date(cellDataF), y: cellDataG });
@@ -93,7 +93,7 @@ fetch(FULL_URL)
       .attr('y', -10)
       .attr('text-anchor', 'middle')
       .style('font-size', '16px')
-      .text('3070 Series');
+      .text('3090 Series');
 
     svg.append('text')
       .attr('x', width / 2)

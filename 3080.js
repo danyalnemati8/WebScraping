@@ -1,4 +1,4 @@
-const FULL_URL = 'https://docs.google.com/spreadsheets/d/1Bzedq9WqMuvgaV9VdpGXVJ4kXEjC5iVpslgnMFNYMkk/edit#gid=0';
+ FULL_URL = 'https://docs.google.com/spreadsheets/d/1Bzedq9WqMuvgaV9VdpGXVJ4kXEjC5iVpslgnMFNYMkk/edit#gid=0';
 
 fetch(FULL_URL)
   .then(response => response.text())
@@ -93,7 +93,7 @@ fetch(FULL_URL)
       .attr('y', -10)
       .attr('text-anchor', 'middle')
       .style('font-size', '16px')
-      .text('3070 Series');
+      .text('3080 Series');
 
     svg.append('text')
       .attr('x', width / 2)
