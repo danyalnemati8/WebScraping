@@ -1,35 +1,4 @@
-/**
-.wrapper {
-    background-color: red;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-}
 
- body {
-    padding: 0;
-    border: 0;
-    margin: 0;
- }
-
- .navbar {
-    height: 80px;
-    width: 100%;
-    background-color: blue;
-    display: flex;
-    flex-direction: row;
-    justify-content: right;
- }
-
- .nav-button {
-    height: 100%;
- }
-
- .main {
-    
- }
- **/
  @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
  * {
    margin: 0;
