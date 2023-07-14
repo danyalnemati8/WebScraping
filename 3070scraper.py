@@ -31,7 +31,7 @@ url = "https://www.newegg.com/p/pl?N=4814%20601357250%20100007709&d=3070&Order=5
 result = requests.get(url).text
 doc = BeautifulSoup(result, "html.parser")
 
-prices = doc.find_all("li", class_="price-current", limit=15)
+prices = doc.find_all("li", class_="price-current", limit=25)
 
 
 for price in prices:
@@ -44,13 +44,13 @@ for price in prices:
         result_numbers_list.append(n)
         print("$" + price_value)
     else:
-        print("Price information not found")
-        prices_list.append("not found")
-        result_numbers_list.append(n)
+        continue
 
     print("result number =", n)
     print("\n")
     n += 1
+    if n > 15:
+        break
 
 
 # Prepare data for updating the sheet
