@@ -44,12 +44,13 @@
    background-repeat: no-repeat;
    background-attachment: fixed;
    display: grid;
-   row-gap: 20px;
-   column-gap: 20px;
+   row-gap: 30px;
+   column-gap: 500px;
    grid-template-columns: auto auto;
    grid-template-rows: auto auto;
    align-items: center;
-   padding: 20px;
+   padding-left: 215px;
+   padding-top: 90px;
  }
  
  .script {
@@ -102,4 +103,16 @@
 
 .navbar a:hover::before {
    width: 100%;
+}
+@media only screen and (max-width:600px){
+   body{
+   
+      display: grid;
+      row-gap: 20px;
+      column-gap: 20px;
+      grid-template-columns: auto auto;
+      grid-template-rows: auto auto;
+      align-items: center;
+      padding: 20px;
+    }
 }
