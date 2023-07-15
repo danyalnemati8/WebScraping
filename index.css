@@ -8,7 +8,7 @@
  }
  body{
    min-height: 100vh;
-   background: url('1429903.jpg') no-repeat;
+   background: url('pexels-fwstudio-129731.jpg') no-repeat;
    background-size: cover;
    background-repeat: no-repeat;
    background-attachment: fixed;
@@ -21,7 +21,8 @@
    padding-left: 215px;
    padding-top: 90px;
  }
- 
+   
+
  .script {
    display: flex;
    align-items: center;
