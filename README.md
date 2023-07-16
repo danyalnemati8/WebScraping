@@ -30,15 +30,12 @@ pip install requests BeautifulSoup4 gspread oauth2client
 
 ## Usage
 
-1. Run the script for the desired GPU (e.g., `3060scraper.py`, `3070scraper.py`, `3080scraper.py`, `3090scraper.py`) using the Python interpreter.
-
-
+1. Run the main_script.py to run all scrapers.
 
 2. The script will scrape the GPU prices from the specified website, update the data in the Google Sheet, and display the scraped prices on the console.
 
 3. The Google Sheet will be updated with the scraped data, including the result number, price, date, and GPU model.
 
-4. Repeat the process for other GPU models by running the respective scripts.
 
 ## Note
 
