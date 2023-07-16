@@ -8,14 +8,14 @@
 }
 
 body {
-  background: url('1429903.jpg'); 
+  background: #d7e9d2;
 }
 
 .wrapper {
-  display: flex;  
+  display: flex;
   justify-content: center;
   width: 100%;
-  height: 100vh - 88px;
+  height: 100vh - 88px; 
   margin-top: 88px;
 }
 
@@ -37,7 +37,7 @@ body {
   font-size: 32px;
   color: #fff;
   text-decoration: none;
-  font-weight: 550; 
+  font-weight: 550;
 }
 
 .navbar a {
@@ -46,7 +46,7 @@ body {
   color: #fff;
   font-weight: 500;
   text-decoration: none;
-  margin-left: 40px;
+  margin-left: 40px; 
 }
 
 .navbar a::before {
@@ -67,12 +67,13 @@ body {
 .about-page-text {
   max-width: 800px;
   padding: 40px;
-  margin: 0 auto;
+  margin: 0 auto; 
+  color: #fff;
 }
 
 .text {
   font-size: 18px;
-  line-height: 1.5;  
+  line-height: 1.5;
 }
 
 .text + .text {
@@ -84,7 +85,7 @@ ul {
 }
 
 li {
-  margin: 10px 0; 
+  margin: 10px 0;
 }
 
 a {
