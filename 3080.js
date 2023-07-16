@@ -84,7 +84,7 @@ fetch(FULL_URL)
       .datum(medianData)
       .attr('class', 'median-line')
       .attr('fill', 'none')
-      .attr('stroke', 'rgba(0, 255, 0, 0.8)')
+      .attr('stroke', 'rgba(255, 0, 255, 0.8)')
       .attr('stroke-width', 2)
       .attr('d', line);
 
@@ -137,7 +137,7 @@ fetch(FULL_URL)
       .attr('y1', 15)
       .attr('x2', 15)
       .attr('y2', 15)
-      .attr('stroke', 'rgba(0, 255, 0, 0.8)')
+      .attr('stroke', 'rgba(255, 0, 255, 0.8)')
       .attr('stroke-width', 2);
     
   })
