@@ -84,7 +84,7 @@ fetch(FULL_URL)
       .datum(medianData)
       .attr('class', 'median-line')
       .attr('fill', 'none')
-      .attr('stroke', 'rgba(0, 255, 0, 0.8)')
+      .attr('stroke', 'rgba(255, 0, 255, 0.8)')
       .attr('stroke-width', 2)
       .attr('d', line);
 
@@ -137,7 +137,7 @@ fetch(FULL_URL)
       .attr('y1', 15)
       .attr('x2', 15)
       .attr('y2', 15)
-      .attr('stroke', 'rgba(0, 255, 0, 0.8)')
+      .attr('stroke', 'rgba(255, 0, 255, 0.8)')
       .attr('stroke-width', 2);
     
   })
@@ -155,30 +155,4 @@ function groupDataByDate(data) {
     groupedData[date].push(datum.y);
   });
   return groupedData;
-}
-
-function calculateMeanData(groupedData) {
-  const meanData = [];
-  Object.keys(groupedData).forEach(date => {
-    const prices = groupedData[date];
-    const mean = prices.reduce((sum, price) => sum + price, 0) / prices.length;
-    meanData.push({ x: new Date(date), y: mean });
-  });
-  return meanData;
-}
-
-function calculateMedianData(groupedData) {
-  const medianData = [];
-  Object.keys(groupedData).forEach(date => {
-    const prices = groupedData[date];
-    const median = calculateMedian(prices);
-    medianData.push({ x: new Date(date), y: median });
-  });
-  return medianData;
-}
-
-function calculateMedian(arr) {
-  const sortedArr = arr.slice().sort((a, b) => a - b);
-  const mid = Math.floor(sortedArr.length / 2);
-  return sortedArr.length % 2 !== 0 ? sortedArr[mid] : (sortedArr[mid - 1] + sortedArr[mid]) / 2;
 }
