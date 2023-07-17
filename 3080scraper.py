@@ -2,7 +2,7 @@ from bs4 import BeautifulSoup
 import requests
 import gspread
 from oauth2client.service_account import ServiceAccountCredentials
-from datetime import datetime
+import datetime
 
 # Define the scope and credentials
 scope = ['https://spreadsheets.google.com/feeds', 'https://www.googleapis.com/auth/drive']
@@ -17,12 +17,10 @@ sheet = client.open_by_url(sheet_url).sheet1
 
 # Get the existing data from the Google Sheet
 existing_data = sheet.get_all_values()
-last_date = existing_data[-1][1]
+last_date = datetime.datetime.strptime(existing_data[-1][1], '%m/%d/%Y').date()
+current_date = datetime.date.today()
 
-current_date = datetime.now().date()
-
-
-if last_date == str(current_date):
+if last_date == current_date:
     exit(1)
 
 # Determine the starting row for appending new data
