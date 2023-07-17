@@ -24,14 +24,25 @@ fetch(FULL_URL)
     const recentLinks = sortedLinks.slice(0, 15);
 
     const linksContainer = document.querySelector('.links');
+    linksContainer.style.position = 'absolute';
+    linksContainer.style.top = '128px'; //88px is height of Navbar
+    linksContainer.style.left = '88px'; 
+
+
+    const wrapperElement = document.createElement('div');
 
     recentLinks.forEach(link => {
       const linkElement = document.createElement('a');
       linkElement.href = link.link;
       linkElement.textContent = link.link;
-      linksContainer.appendChild(linkElement);
-      linksContainer.appendChild(document.createElement('br'));
+      linkElement.target = '_blank';
+      wrapperElement.appendChild(linkElement);
+      wrapperElement.appendChild(document.createElement('br'));
+      wrapperElement.appendChild(document.createElement('br'));
     });
+
+    linksContainer.innerHTML = ''; // Clear previous content
+    linksContainer.appendChild(wrapperElement);
   })
   .catch(error => {
     console.error(error);
