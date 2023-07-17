@@ -43,6 +43,8 @@ fetch(FULL_URL)
       .attr('y', -margin.top)
       .attr('width', chartWidth)
       .attr('height', chartHeight)
+      .attr('rx', 10) // Set the horizontal radius of the rounded corners
+      .attr('ry', 10) 
       .attr('fill', 'white'); // Set the background color of the chart to white
 
 
