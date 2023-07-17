@@ -23,20 +23,15 @@ fetch(FULL_URL)
     const sortedLinks = linkData.sort((a, b) => b.timestamp - a.timestamp);
     const recentLinks = sortedLinks.slice(0, 15);
 
-    const container = document.querySelector('.container');
-    const linkList = document.createElement('ul');
-    linkList.classList.add('link-list');
+    const linksContainer = document.querySelector('.links');
 
     recentLinks.forEach(link => {
-      const listItem = document.createElement('li');
       const linkElement = document.createElement('a');
       linkElement.href = link.link;
       linkElement.textContent = link.link;
-      listItem.appendChild(linkElement);
-      linkList.appendChild(listItem);
+      linksContainer.appendChild(linkElement);
+      linksContainer.appendChild(document.createElement('br'));
     });
-
-    container.appendChild(linkList);
   })
   .catch(error => {
     console.error(error);
