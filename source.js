@@ -26,20 +26,25 @@ fetch(FULL_URL)
     const linksContainer = document.querySelector('.links');
     linksContainer.style.position = 'absolute';
     linksContainer.style.top = '128px'; //88px is height of Navbar
-    linksContainer.style.left = '88px'; 
+    linksContainer.style.left = '128px'; 
 
 
     const wrapperElement = document.createElement('div');
 
     recentLinks.forEach(link => {
+      const listItem = document.createElement('li');
+      listItem.style.color = 'white'; // Set the bullet point color to white
+    
       const linkElement = document.createElement('a');
       linkElement.href = link.link;
       linkElement.textContent = link.link;
       linkElement.target = '_blank';
-      wrapperElement.appendChild(linkElement);
-      wrapperElement.appendChild(document.createElement('br'));
-      wrapperElement.appendChild(document.createElement('br'));
+      linkElement.style.color = 'white';
+    
+      listItem.appendChild(linkElement);
+      wrapperElement.appendChild(listItem);
     });
+    
 
     linksContainer.innerHTML = ''; // Clear previous content
     linksContainer.appendChild(wrapperElement);
