@@ -74,15 +74,20 @@
 .navbar a:hover::before {
    width: 100%;
 }
-@media only screen and (max-width:600px){
-   body{
-   
-      display: grid;
-      row-gap: 20px;
-      column-gap: 20px;
-      grid-template-columns: auto auto;
-      grid-template-rows: auto auto;
-      align-items: center;
-      padding: 20px;
-    }
+@media only screen and (max-width: 600px) {
+
+  body {
+    grid-template-columns: 1fr; 
+    grid-template-rows: auto;
+    padding: 10px;
+  }
+
+  .header {
+    padding: 10px;
+  }
+
+  .navbar a {
+    margin-left: 20px;
+  }
+
 }
