@@ -18,6 +18,13 @@ sheet = client.open_by_url(sheet_url).sheet1
 
 # Get the existing data from the Google Sheet
 existing_data = sheet.get_all_values()
+last_date = existing_data[-1][1]
+
+current_date = datetime.datetime.now().date()
+
+
+if last_date == str(current_date):
+    exit(1)
 
 # Determine the starting row for appending new data
 starting_row = len(existing_data) + 1
