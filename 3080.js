@@ -35,6 +35,16 @@ fetch(FULL_URL)
       .append('g')
       .attr('transform', `translate(${margin.left},${margin.top})`);
 
+    const chartWidth = width + margin.left + margin.right;
+    const chartHeight = height + margin.top + margin.bottom;
+
+    svg.append('rect')
+      .attr('x', -margin.left)
+      .attr('y', -margin.top)
+      .attr('width', chartWidth)
+      .attr('height', chartHeight)
+      .attr('fill', 'white'); // Set the background color of the chart to white
+
     const xScale = d3.scaleTime()
       .domain(d3.extent(data, d => d.x))
       .range([0, width]);
