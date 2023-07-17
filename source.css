@@ -11,14 +11,6 @@ body {
   background: #8cb780;
 }
 
-.wrapper {
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  height: 100vh - 88px; 
-  margin-top: 88px;
-}
-
 .header {
   position: fixed;
   top: 0;
@@ -62,4 +54,17 @@ body {
 
 .navbar a:hover::before {
   width: 100%;
+}
+.links {
+  height: 100vh;
+}
+
+.sheet {
+  width: 100%;
+  height: 99vh;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 128px;
+  padding-bottom: 30px;
+  border: 0;
 }
