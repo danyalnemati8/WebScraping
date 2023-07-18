@@ -78,6 +78,9 @@ body {
     justify-content: center;
     align-items: center;
  }
+ nav .fas{
+   display: none;
+ }
  @media only screen and (max-width: 600px) {
 
    .header {
@@ -100,5 +103,23 @@ body {
    .LI-profile-badge {
      transform: scale(0.8); 
    }
+   nav .fas{
+      display: block;
+      font-size: 25px;
+    }
+    nav ul{
+      background: seagreen;
+      position: fixed;
+      top: 0;
+      right: 0;
+      width: 200px;
+      height: 100vh;
+      padding-top: 50px;
+
+    }
+    nav ul li{
+      display: block;
+      margin: 25px;
+    }
  
  }
