@@ -68,3 +68,43 @@ body {
   padding-bottom: 30px;
   border: 0;
 }
+@media only screen and (max-width: 600px) {
+
+  .header {
+    padding: 10px;
+  }
+
+  .navbar a {
+    margin-left: 10px;
+    font-size: 16px; 
+  }
+
+
+
+
+  nav .fas{
+     display: block;
+     font-size: 25px;
+   }
+   nav ul{
+     background: seagreen;
+     position: fixed;
+     top: 0;
+     right: -200px;
+     width: 200px;
+     height: 100vh;
+     padding-top: 50px;
+     z-index: 2;
+   }
+   nav ul li{
+     display: block;
+     margin: 25px;
+   }
+   nav ul .fas{
+     position: absolute;
+     top: 25px;
+     left: 25px;
+     cursor: pointer;
+   }
+
+}
