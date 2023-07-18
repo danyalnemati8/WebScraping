@@ -78,4 +78,27 @@ body {
     justify-content: center;
     align-items: center;
  }
+ @media only screen and (max-width: 600px) {
+
+   .header {
+     padding: 10px;
+   }
  
+   .navbar a {
+     margin-left: 10px;
+     font-size: 16px; 
+   }
+ 
+   .flex-box {
+     flex-direction: column;
+   }
+ 
+   .contact {
+     margin-bottom: 20px;
+   }
+ 
+   .LI-profile-badge {
+     transform: scale(0.8); 
+   }
+ 
+ }
