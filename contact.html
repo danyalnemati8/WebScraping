@@ -13,17 +13,27 @@
             <header class="header">
             <a href="#" class="logo">Logo</a>
             <nav class="navbar">
-                <ul>
+                <ul id="sidemenu">
                     <li><a href="index.html">Home</a></li>
                     <li><a href="about.html">About</a></li>
                     <li><a href="https://github.com/andy-gale/WebScraping" target = "_blank">Github</a></li>
                     <li><a href="source.html">Source</a></li>
                     <li><a href="contact.html">Contact </a></li>
-                    <i class="fas fa-times" style="color:white"></i>
+                    <i class="fas fa-times" style="color:white" onclick="closemenu()"></i>
                 </ul>
-                <i class="fas fa-bars" style="color:white"></i>
+                <i class="fas fa-bars" style="color:white"onclick="openmenu()"></i>
             </nav>
         </header>
+        <script>
+            var sidemenu = document.getElementById("sidemenu");
+          
+            function openmenu(){
+                sidemenu.style.right = "0";
+            }
+            function closemenu(){
+              sidemenu.style.right = "-200px";
+          }
+        </script>
         
         <div class="wrapper">
             <div class="flex-box">
