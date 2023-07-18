@@ -59,7 +59,7 @@ for i in range(len(prices)):
     print("Result number =", n)
     print("\n")
     n += 1
-    if n > 15:
+    if n > 14:
         break
 
 # Prepare data for updating the sheet
