@@ -16,6 +16,8 @@ client = gspread.authorize(credentials)
 sheet_url = 'https://docs.google.com/spreadsheets/d/1Bzedq9WqMuvgaV9VdpGXVJ4kXEjC5iVpslgnMFNYMkk/edit#gid=0'
 sheet = client.open_by_url(sheet_url).sheet1
 
+
+
 # Get the existing data from the Google Sheet
 existing_data = sheet.get_all_values()
 
