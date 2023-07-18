@@ -39,7 +39,11 @@ body {
   text-decoration: none;
   font-weight: 550;
 }
-
+nav ul li{
+  display: inline-block;
+  list-style: none;
+  margin: 10px 20px;
+}
 .navbar a {
   position: relative;
   font-size: 18px;
@@ -91,6 +95,9 @@ li {
 a {
   color: #0077cc;
 }
+nav .fas{
+  display: none;
+}
 @media only screen and (max-width: 600px) {
 
   .about-page-text {
@@ -99,6 +106,30 @@ a {
   
   .text {
     font-size: 18px;
+  }
+  nav .fas{
+    display: block;
+    font-size: 25px;
+  }
+  nav ul{
+    background: seagreen;
+    position: fixed;
+    top: 0;
+    right: -200px;
+    width: 200px;
+    height: 100vh;
+    padding-top: 50px;
+    z-index: 2;
+  }
+  nav ul li{
+    display: block;
+    margin: 25px;
+  }
+  nav ul .fas{
+    position: absolute;
+    top: 25px;
+    left: 25px;
+    cursor: pointer;
   }
 
 }

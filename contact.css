@@ -41,6 +41,11 @@ body {
     font-weight: 550;
  
  }
+ nav ul li{
+   display: inline-block;
+   list-style: none;
+   margin: 10px 20px;
+ }
  .navbar a {
     position: relative;
     font-size: 18px;
@@ -78,6 +83,9 @@ body {
     justify-content: center;
     align-items: center;
  }
+ nav .fas{
+   display: none;
+ }
  @media only screen and (max-width: 600px) {
 
    .header {
@@ -100,5 +108,29 @@ body {
    .LI-profile-badge {
      transform: scale(0.8); 
    }
+   nav .fas{
+      display: block;
+      font-size: 25px;
+    }
+    nav ul{
+      background: seagreen;
+      position: fixed;
+      top: 0;
+      right: -200px;
+      width: 200px;
+      height: 100vh;
+      padding-top: 50px;
+      z-index: 2;
+    }
+    nav ul li{
+      display: block;
+      margin: 25px;
+    }
+    nav ul .fas{
+      position: absolute;
+      top: 25px;
+      left: 25px;
+      cursor: pointer;
+    }
  
  }
