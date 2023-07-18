@@ -17,11 +17,6 @@ sheet = client.open_by_url(sheet_url).sheet1
 
 # Get the existing data from the Google Sheet
 existing_data = sheet.get_all_values()
-last_date = datetime.datetime.strptime(existing_data[-1][1], '%m/%d/%Y').date()
-current_date = datetime.date.today()
-
-if last_date == current_date:
-    exit(1)
 
 # Determine the starting row for appending new data
 starting_row = len(existing_data) + 1
@@ -62,13 +57,18 @@ for i in range(len(prices)):
     if n > 14:
         break
 
+# Get today's date
+today = datetime.date.today()
+
+# Convert the date components to strings
+month = str(today.month)
+year = str(today.year)
+day = str(today.day)
+
 # Prepare data for updating the sheet
 data = []
 for i in range(len(result_numbers_list)):
     if i < len(prices_list):
-        month = str(datetime.now().month)
-        year = str(datetime.now().year)
-        day = str(datetime.now().day)
         data.append([links_list[i], str(month + "/" + day + "/" + year), prices_list[i], "3090 GPU's"])
     else:
         data.append([links_list[i], "Price information not found"])

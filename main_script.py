@@ -1,6 +1,21 @@
 # main_script.py
 
 import multiprocessing
+import gspread
+from oauth2client.service_account import ServiceAccountCredentials
+
+# Define the scope and credentials
+scope = ['https://spreadsheets.google.com/feeds', 'https://www.googleapis.com/auth/drive']
+credentials = ServiceAccountCredentials.from_json_keyfile_name('scraper-project-391720-5521d58f18ef.json', scope)
+
+# Authorize the credentials
+client = gspread.authorize(credentials)
+
+# Open the Google Sheet
+sheet_url = 'https://docs.google.com/spreadsheets/d/1Bzedq9WqMuvgaV9VdpGXVJ4kXEjC5iVpslgnMFNYMkk/edit#gid=0'
+sheet = client.open_by_url(sheet_url).sheet1
+
+sheet.delete_rows(2,8)
 
 def run_file(file_name):
     exec(open(file_name).read())

@@ -2,7 +2,7 @@ name: Daily Python Script
 
 on:
   schedule:
-    - cron: '30 7 * * *'  
+    - cron: '30 8 * * *'  
 
 jobs:
   build:
@@ -11,14 +11,14 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2  # Update to the latest version (v2) of actions/checkout
-
+      
       - name: Set up Python
         uses: actions/setup-python@v3
         with:
           python-version: '3.9'  # Replace with your desired Python version
         env:
           NODE_OPTIONS: "--unhandled-rejections=warn"  # Add this line to suppress a warning related to Node.js
-
+  
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
