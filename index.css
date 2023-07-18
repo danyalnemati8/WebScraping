@@ -53,6 +53,11 @@
    font-weight: 550;
 
 }
+nav ul li{
+  display: inline-block;
+  list-style: none;
+  margin: 10px 20px;
+}
 .navbar a {
    position: relative;
    font-size: 18px;
@@ -74,6 +79,9 @@
 
 .navbar a:hover::before {
    width: 100%;
+}
+nav .fas{
+  display: none;
 }
 @media only screen and (max-width: 600px) {
 

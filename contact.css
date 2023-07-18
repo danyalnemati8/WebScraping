@@ -41,6 +41,11 @@ body {
     font-weight: 550;
  
  }
+ nav ul li{
+   display: inline-block;
+   list-style: none;
+   margin: 10px 20px;
+ }
  .navbar a {
     position: relative;
     font-size: 18px;
