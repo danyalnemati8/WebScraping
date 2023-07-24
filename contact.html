@@ -1,53 +1,60 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WebScraper</title>
-    <link rel="stylesheet" href="contact.css">
-    <script src="https://kit.fontawesome.com/8a07e563e0.js" crossorigin="anonymous"></script>
-    <script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
-    
-    </head>
-    <body>
-            <header class="header">
-            <a href="grap" class="logo">Logo</a>
-            <nav class="navbar">
-                <ul id="sidemenu">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="https://github.com/andy-gale/WebScraping" target = "_blank">Github</a></li>
-                    <li><a href="source.html">Source</a></li>
-                    <li><a href="contact.html">Contact </a></li>
-                    <i class="fas fa-times" style="color:white" onclick="closemenu()"></i>
-                </ul>
-                <i class="fas fa-bars" style="color:white"onclick="openmenu()"></i>
-            </nav>
-        </header>
-        <script>
-            var sidemenu = document.getElementById("sidemenu");
-          
-            function openmenu(){
-                sidemenu.style.right = "0";
-            }
-            function closemenu(){
-              sidemenu.style.right = "-200px";
-          }
-        </script>
-        <script src="https://platform.linkedin.com/badges/js/profile.js" type="text/javascript"></script>
 
-        <div class="wrapper">
-            <div class="flex-box">
-                <div class="contact">
-                    <div class="badge-base LI-profile-badge" data-locale="en_US" data-size="large" data-theme="light" data-type="VERTICAL" data-vanity="andrew-gale-225b02259" data-version="v1"></div>
-                </div>
-                <div class="contact">
-                   
-<div class="LI-profile-badge" data-version="v1" data-size="medium" data-locale="en_US" data-type="vertical" data-theme="light" data-vanity="danyal-nemati-01b673221">
-</div>
-                </div>
-            </div>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WebScraper</title>
+  <link rel="stylesheet" href="contact.css">
+  <script src="https://kit.fontawesome.com/8a07e563e0.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+  <header class="header">
+    <a href="grap" class="logo">Logo</a>
+    <nav class="navbar">
+      <ul id="sidemenu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="https://github.com/andy-gale/WebScraping" target="_blank">Github</a></li>
+        <li><a href="source.html">Source</a></li>
+        <li><a href="contact.html">Contact </a></li>
+        <i class="fas fa-times" style="color:white" onclick="closemenu()"></i>
+      </ul>
+      <i class="fas fa-bars" style="color:white" onclick="openmenu()"></i>
+    </nav>
+  </header>
+
+  <div class="wrapper">
+    <div class="flex-box">
+
+      <div class="contact">
+        <div class="linkedin-badge">
+          <img src="https://media-exp1.licdn.com/dms/image/C4D03AQEH4CxhkhtzrA/profile-displayphoto-shrink_100_100/0/1645556197341?e=1658966400&v=beta&t=aHpQLEk6AQMzDYGlIuPn_2Z-ByiHJrHkFY6WpR4mWz0" alt="Andrew Gale">
+          <div>
+            <h3>Andrew Gale</h3>
+            <p>Software Engineer</p>
+            <a href="https://www.linkedin.com/in/andrew-gale-225b02259/" target="_blank">View Profile</a>
+          </div>
         </div>
-    </body>
+      </div>
+      
+      <div class="contact">
+        <div class="linkedin-badge">
+          <img src="https://media-exp1.licdn.com/dms/image/C5603AQEguvuGwHW3rQ/profile-displayphoto-shrink_100_100/0/1516796672159?e=1658966400&v=beta&t=B1XdQPW9ipO0bYiVrsUtjfM2M5MqdF6HzftECsjxS2E" alt="Danyal Nemati"> 
+          <div>
+            <h3>Danyal Nemati</h3>  
+            <p>Software Engineer</p>
+            <a href="https://www.linkedin.com/in/danyal-nemati-01b673221/" target="_blank">View Profile</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</body>
+
 </html>
