@@ -6,7 +6,6 @@
    box-sizing: border-box;
    font-family: "Poppins", sans-serif;
  }
-
  body{
    min-height: 100vh;
    background: #8cb780;
@@ -87,8 +86,8 @@ nav .fas{
 @media only screen and (max-width: 600px) {
 
   body {
-    display: flex;
-    flex-direction: column;
+    grid-template-columns: 1fr; 
+    grid-template-rows: auto;
     padding: 10px;
     padding-top: 80px;
   }
