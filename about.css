@@ -100,6 +100,15 @@ nav .fas{
 }
 @media only screen and (max-width: 600px) {
 
+  .header {
+    padding: 10px;
+  }
+
+  .navbar a {
+    margin-left: 10px;
+    font-size: 16px; 
+  }
+  
   .about-page-text {
     max-width: 600px; 
   }
