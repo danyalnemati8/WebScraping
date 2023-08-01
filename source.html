@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WebScraper</title>
+  <script src="https://kit.fontawesome.com/8a07e563e0.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="source.css">
+</head>
+<body>
+  <header class="header">
+    <a href="#" class="logo">Logo</a>
+    <nav class="navbar">
+        <ul id="sidemenu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="https://github.com/andy-gale/WebScraping" target = "_blank">Github</a></li>
+            <li><a href="source.html">Source</a></li>
+            <li><a href="contact.html">Contact </a></li>
+            <i class="fas fa-times" style="color:white" onclick="closemenu()"></i>
+        </ul>
+        <i class="fas fa-bars" style="color:white"onclick="openmenu()"></i>
+    </nav>
+</header>
+<script>
+    var sidemenu = document.getElementById("sidemenu");
+  
+    function openmenu(){
+        sidemenu.style.right = "0";
+    }
+    function closemenu(){
+      sidemenu.style.right = "-200px";
+  }
+</script>
+
+  <div class="container">
+    <div class="links">
+      <iframe class="sheet" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQeUNai0v6SOMiwbDy8CBY-HcMjL60pgBX1R5fNITJZ3ZirNABVmtsaXnOG5OFljFVuFWSRJOOSEEVW/pubhtml?widget=true&amp;headers=false"></iframe>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,117 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: #8cb780;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 88px;
+  padding: 20px 100px;
+  background: seagreen;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+}
+
+.logo {
+  font-size: 32px;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 550;
+}
+nav ul li{
+  display: inline-block;
+  list-style: none;
+  margin: 10px 20px;
+}
+.navbar a {
+  position: relative;
+  font-size: 18px;
+  color: #fff;
+  font-weight: 500;
+  text-decoration: none;
+  margin-left: 40px; 
+}
+
+.navbar a::before {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #fff;
+  transition: .3s;
+}
+
+.navbar a:hover::before {
+  width: 100%;
+}
+.links {
+  height: 100vh;
+}
+
+.sheet {
+  width: 100%;
+  height: 99vh;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 128px;
+  padding-bottom: 30px;
+  border: 0;
+}
+nav .fas{
+  display: none;
+}
+@media only screen and (max-width: 600px) {
+
+  .header {
+    padding: 10px;
+  }
+
+  .navbar a {
+    margin-left: 10px;
+    font-size: 16px; 
+  }
+
+
+
+
+  nav .fas{
+     display: block;
+     font-size: 25px;
+   }
+   nav ul{
+     background: seagreen;
+     position: fixed;
+     top: 0;
+     right: -200px;
+     width: 200px;
+     height: 100vh;
+     padding-top: 50px;
+     z-index: 2;
+   }
+   nav ul li{
+     display: block;
+     margin: 25px;
+   }
+   nav ul .fas{
+     position: absolute;
+     top: 25px;
+     left: 25px;
+     cursor: pointer;
+   }
+
+}
