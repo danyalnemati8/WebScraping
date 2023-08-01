@@ -7,7 +7,7 @@ import datetime
 
 # Define the scope and credentials
 scope = ['https://spreadsheets.google.com/feeds', 'https://www.googleapis.com/auth/drive']
-credentials = ServiceAccountCredentials.from_json_keyfile_name('credentials.json', scope)
+credentials = ServiceAccountCredentials.from_json_keyfile_name('creds.json', scope)
 
 # Authorize the credentials
 client = gspread.authorize(credentials)
