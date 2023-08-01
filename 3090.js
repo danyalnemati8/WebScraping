@@ -168,9 +168,3 @@ function groupDataByDate(data) {
   });
   return groupedData;
 }
-/*
-pub   rsa2048 2023-07-25 [SC]
-22C7595224DFCE31262E44F68332152A1351DA0B
-uid                      danyal (key) <nematidanyal@gmail.com>
-sub   rsa2048 2023-07-25 [E]
-*/
