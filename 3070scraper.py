@@ -27,7 +27,7 @@ prices_list = []  # Empty list to store prices
 result_numbers_list = []  # Empty list to store result numbers
 links_list = []
 
-url = "https://www.newegg.com/p/pl?N=4814%20601357250%20100007709&d=3070&Order=5"
+url = "https://www.newegg.com/p/pl?d=3070&RN=4841"
 
 result = requests.get(url).text
 doc = BeautifulSoup(result, "html.parser")
